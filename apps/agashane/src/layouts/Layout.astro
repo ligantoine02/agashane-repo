@@ -1,4 +1,11 @@
 ---
+import "@fontsource-variable/azeret-mono";
+import "@fontsource-variable/unbounded";
+import "@fontsource/bellota";
+
+import "../styles/global.css";
+import "../styles/tailwind.css";
+
 export interface Props {
 	title: string;
 }
@@ -26,8 +33,11 @@ const { title } = Astro.props;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: 'Azeret Mono Variable', system-ui, sans-serif;
 		background-color: #F6F6F6;
+	}
+	body {
+		font-family: 'Azeret Mono Variable', sans-serif;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,

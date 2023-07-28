@@ -10,9 +10,16 @@
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.4.1",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0",
-  "name": "agashane-repo"
+  "name": "agashane-repo",
+  "dependencies": {
+    "@fontsource-variable/azeret-mono": "^5.0.6",
+    "@fontsource-variable/unbounded": "^5.0.5",
+    "@fontsource/bellota": "^5.0.5",
+    "@phosphor-icons/react": "^2.0.10"
+  }
 }
