@@ -16,8 +16,9 @@ export default {
           "sans-serif",
         ],
         mono: ["Azeret Mono Variable", "Unbounded Variable", "sans-serif"],
+        unbound: ["Unbounded Variable"],
       },
     },
   },
-  plugins: [require("rippleui")],
+  plugins: [require("@tailwindcss/typography"), require("rippleui")],
 } satisfies Config;

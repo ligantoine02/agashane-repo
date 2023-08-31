@@ -1,0 +1,40 @@
+---
+import { ChatTeardrop } from '@phosphor-icons/react';
+import { WEBSITE_NAME } from '../config/constants';
+---
+<header class="navbar navbar-sticky rounded-lg container mx-auto my-2 md:my-4 py-2 md:py-4 px-2 md:px-12">
+    <div class="navbar-start">
+        <a href="/" class="navbar-item">{WEBSITE_NAME}</a>
+    </div>
+
+        <!-- Mobile menu -->
+    <div class="navbar-end md:hidden">
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <label class="btn flex cursor-pointer" tabindex="0">
+                    Menu
+                </label>
+                <div class="dropdown-menu dropdown-menu-bottom-left">
+                    <a class="dropdown-item text-sm" href="/">Home</a>
+                    <a tabindex="-1" class="dropdown-item text-sm" href="/blog">Blog</a>
+                    <a tabindex="-1" class="dropdown-item text-sm" href="/about">About me</a>
+                    <a tabindex="-1" class="btn btn-primary my-2" href="/contact"><ChatTeardrop  /> <span class="ml-2">Get in touch</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Mobile menu -->
+
+    <!-- Desktop menu -->
+    <div class="navbar-end hidden md:flex">
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/blog">Blog</a>
+        <a class="navbar-item" href="/about">About me</a>
+        <a class="btn btn-primary mx-4" href="/contact"> 
+            <ChatTeardrop />    
+            <span class="ml-2">Get in touch</span>
+        </a>
+    </div>
+    <!-- End Desktop menu -->
+
+</header>
