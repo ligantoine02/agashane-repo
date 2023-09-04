@@ -1,0 +1,10 @@
+---
+interface Props {
+    date: Date;
+}
+
+const {date} = Astro.props;
+const strDate = date.toLocaleDateString('en-US');
+
+---
+<span class="link link-ghost text-sm md:text-md">{strDate}</span>

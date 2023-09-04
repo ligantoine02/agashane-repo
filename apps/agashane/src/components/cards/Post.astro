@@ -1,4 +1,5 @@
 ---
+import Image from '../Image.astro';
 interface Props {
     title: string;
     slug: string;
@@ -7,10 +8,11 @@ interface Props {
 }
 
 const {title, slug, preview, description} = Astro.props;
-console.log(preview);
+
 ---
     <article class="card card-image-cover">
-        <img src={`${preview}`} alt={title}  />
+        <!-- <img src={`${preview}`} alt={title}  /> -->
+        <Image image={preview} alt={title} />
         <div class="card-body">
             <a href={`blog/${slug}`}>
                 <h3 class="card-header font-unbound">{title}</h3>

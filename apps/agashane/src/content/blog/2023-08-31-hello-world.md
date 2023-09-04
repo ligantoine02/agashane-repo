@@ -36,6 +36,7 @@ It's the language I'm learning these days.
 ### Typescript (Javascript) 🥈👍
 
 One of my daily languages using it with React, Remix, Gatsby and Astro ⭐
+![A little cool placeholder](../../src/assets/placeholder.jpg)
 
 ```typescript
 console.log("Hello world, Typescript !");

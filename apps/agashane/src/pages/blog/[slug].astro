@@ -1,22 +1,84 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import CustomDate from "../../components/CustomDate.astro";
 import { getPosts } from "../../helpers/posts";
 import Layout from '../../layouts/Layout.astro';
 
 export const getStaticPaths = async () => {
-    const blogPosts = await getPosts();    
+    const blogPosts = await getPosts({draft: false});    
     return blogPosts.map(entry => ({
         params: {slug: entry.slug}, props: {entry}
     }));
 };
 
 const {entry} = Astro.props as {entry: CollectionEntry<'blog'>};
-console.log(entry.slug)
 const {Content} = await entry.render();
 
 
 ---
 <Layout title={entry.data.title}>
-    <h1>{entry.data.title}</h1>
-    <Content />
+    <header
+        class="
+            bg-slate-800 
+            py-1 md:py-12 lg:py-24 
+            rounded-xl 
+            mb-8 md:mb-20 
+            px-4 md:px-12
+        ">
+        <div class="flex flex-row justify-start md:justify-center mt-8">
+        {entry.data.categories.map(category => <a 
+                    href="#" 
+                    class="text-sm md:text-md uppercase btn btn-primary btn-xs rounded-xl"
+                >{category}</a>)}
+        </div>
+        <h1 class="
+            mx-auto 
+            my-8 md:my-12 
+            text-xl 
+            md:text-3xl 
+            text-left 
+            md:text-center 
+            w-full 
+            lg:w-3/5 leading-relaxed
+            ">{entry.data.title}</h1>
+        <section class="
+            flex 
+            flex-row flex-wrap justify-start md:justify-center
+            gap-4
+            w-full 
+            lg:w-2/5 
+            mx-auto 
+            mb-12 
+            ">
+            <div class="flex flex-col gap-1">
+                <p class="text-xs text-slate-200 px-2">Updated at</p>
+                <CustomDate date={entry.data.updated} />
+            </div>
+            <div class="flex flex-col gap-1">
+                <p class="text-xs text-slate-200 px-2">Tags</p>
+                <div class="flex flex-row gap-1 flex-wrap">
+                    {entry.data.tags.map(tag => <a
+                        href={`/tags/${tag.toLowerCase()}`}
+                        class="link link-ghost-secondary text-sm md:text-md"
+                    >{tag}</a>)}
+                </div>
+            </div>
+        </section>
+    </header>
+        
+    <article class="
+        px-2
+        prose 
+        mx-auto 
+        prose-sm 
+        md:prose-lg 
+        prose-cyan 
+        prose-h2:text-stone-400
+        prose-h3:text-yellow-600
+        prose-p:text-gray-200 prose-img:rounded-xl prose-img:my-8
+        ">
+        <Content />
+    </article>
+
+    <!-- TODO Related posts -->
 </Layout>

@@ -3,7 +3,7 @@ import PostsList from '../../components/PostsList.astro';
 import { getPosts } from "../../helpers/posts";
 import Layout from "../../layouts/Layout.astro";
 
-const allPosts = await getPosts(true);
+const allPosts = await getPosts({draft: false});
 
 ---
 

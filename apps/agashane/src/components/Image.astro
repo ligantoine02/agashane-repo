@@ -1,0 +1,16 @@
+---
+interface Props {
+    image: string;
+    alt: string;
+}
+
+const {image, alt} = Astro.props;
+---
+
+<!-- TODO check if image exists -->
+
+{
+    image 
+    ? <img src={`${image}`} alt={alt}  /> 
+    : <img src="../assets/placeholder.jpg" alt={alt} />
+}
