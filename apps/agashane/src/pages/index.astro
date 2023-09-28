@@ -1,15 +1,15 @@
 ---
 import { Heart } from '@phosphor-icons/react';
 import Layout from '../layouts/Layout.astro';
+import HomeHero from "../components/HomeHero.astro";
+import HomePosts from '../components/HomePosts.astro';
+import TagsList from "../components/TagsList.astro";
 ---
 
 <Layout title="Agashane | Tech smarter, not harder">
-	<div class=" bg-red-300"><h1>Un titre</h1></div>
-	<button class="btn btn-secondary">Ripple button</button>
-	<h1 class="text-5xl">This is a long text</h1>
-	<Heart color="#AE2983" weight="fill" size={32} />
-	<p class="text-lg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit deserunt illum, esse, cumque accusantium, minima deleniti porro perferendis consequuntur eum consectetur provident? In, dicta. Totam velit laborum autem! Culpa, reprehenderit.</p>
-	<h2 class="text-3xl">This is another one</h2>
+	<HomeHero />
+	<TagsList />
+	<HomePosts />
 </Layout>
 
 <style>

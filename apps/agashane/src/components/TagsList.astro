@@ -1,0 +1,48 @@
+---
+import {ArrowRight, Check} from "@phosphor-icons/react";
+import {getTags} from "../helpers/posts";
+
+interface Props {
+  active?: string;
+}
+
+const {active} = Astro.props;
+const tags = await getTags();
+
+---
+
+<div class="flex flex-col gap-8 my-12 md:my-24">
+  <h2>Explore by topics</h2>
+  <nav class="flex flex-row flex-wrap gap-4">
+    {
+      tags.map(tag => <a 
+        href={`/tags/${tag.toLowerCase()}`}
+        class={
+          active === tag.toLowerCase() 
+          ? "group btn btn-solid-primary"
+          : "group btn btn-outline-secondary"
+        }
+        >
+          <span class="mr-2">{tag}</span>
+          {
+            active !== tag.toLowerCase() ?
+            (
+            <span class="
+              hidden 
+              transition 
+              ease-out 
+              group-hover:ease-in 
+              group-hover:inline-flex
+              duration-150
+              ">
+              <ArrowRight />
+            </span>
+            ) : (
+              <span>
+                <Check />
+              </span>
+            )
+        </a>)
+    }
+  </nav>
+</div>

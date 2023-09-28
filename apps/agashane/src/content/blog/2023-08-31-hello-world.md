@@ -2,8 +2,9 @@
 title: Hello world, Rust, Typescript, PHP... for blogging
 description: Hello world ! This is the first post for this blog. I would like to share all stuffs about Rust, Typescript/Javascript and PHP(Laravel). Sure we'll enjoy.
 date: 2023-08-31T06:13:17.403Z
-preview: src/assets/pexels-steve-johnson-1266808.jpg
+preview: /covers/pexels-steve-johnson-1266808.jpg
 draft: false
+featured: true
 tags:
   - Rust
   - Typescript
@@ -36,7 +37,7 @@ It's the language I'm learning these days.
 ### Typescript (Javascript) 🥈👍
 
 One of my daily languages using it with React, Remix, Gatsby and Astro ⭐
-![A little cool placeholder](../../src/assets/placeholder.jpg)
+![A little cool placeholder](/src/assets/placeholder.jpg)
 
 ```typescript
 console.log("Hello world, Typescript !");

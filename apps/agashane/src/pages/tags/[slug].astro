@@ -1,18 +1,29 @@
 ---
-import { getPosts } from '../../helpers/posts';
+import { getTags, getPosts, filterByTag } from '../../helpers/posts';
 import Layout from '../../layouts/Layout.astro';
+import PostsList from "../../components/PostsList.astro";
+import TagsList from "../../components/TagsList.astro";
 
 export const getStaticPaths = async () => {
     const posts = await getPosts({draft: false});
-    return posts.map(entry => ({
-        params: {slug: entry.slug}, props: {entry}
+    
+    const tags = await getTags()
+    return tags.map(entry => ({
+            params: {slug: entry.toLowerCase()}, 
+            props: posts,
     }));
 };
 
-const {entry} = Astro.props;
-console.log(JSON.stringify(entry, null, 2));
+const {slug} = Astro.params;
+let posts = Astro.props;
+posts = filterByTag(posts, slug);
+
 ---
 
 <Layout title="Tag">
-    <h1>Tag</h1>
+    <TagsList active={slug} />
+
+    <h1 class="mb-12 capitalize text-4xl">{slug}</h1>
+    <PostsList posts={posts} />
+
 </Layout>

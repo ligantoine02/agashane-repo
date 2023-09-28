@@ -11,6 +11,7 @@ const blogCollection = defineCollection({
     preview: z.string(),
     draft: z.boolean(),
     updated: z.date(),
+    featured: z.boolean(),
   }),
 });
 

@@ -9,12 +9,13 @@ interface Props {
 const {posts} = Astro.props;
 ---
 <main>
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 space-y-4">
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4">
         {posts.map(single => <Post 
             title={single.data.title} 
             preview={single.data.preview} 
             slug={single.slug} 
             description={single.data.description}
+            tags={single.data.tags}
             />)}
     </section>
 </main>

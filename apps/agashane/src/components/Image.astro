@@ -11,6 +11,6 @@ const {image, alt} = Astro.props;
 
 {
     image 
-    ? <img src={`${image}`} alt={alt}  /> 
-    : <img src="../assets/placeholder.jpg" alt={alt} />
+    ? <img src={`src/assets/${image}`} alt={alt} class="rounded-xl max-h-60"  /> 
+    : <img src="src/assets/placeholder.jpg" alt={alt} class="rounded-xl max-h-60" />
 }

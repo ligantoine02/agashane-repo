@@ -48,6 +48,12 @@
           "name": "updated",
           "type": "datetime",
           "default": "{{now}}"
+        },
+        {
+          "title": "Is featured",
+          "name": "featured",
+          "type": "boolean",
+          "default": false
         }
       ]
     }
@@ -56,7 +62,7 @@
   "frontMatter.preview.host": "http://localhost:3000",
   "frontMatter.content.publicFolder": {
     "path": "src/assets",
-    "relative": true
+    "relative": false
   },
   "frontMatter.content.pageFolders": [
     {
