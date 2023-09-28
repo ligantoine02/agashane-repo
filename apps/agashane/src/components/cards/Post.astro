@@ -16,7 +16,9 @@ const {title, slug, preview, description, tags} = Astro.props;
         <Image image={preview} alt={title} />
         <div class="card-body">
             {tags && <nav class="mb-2 flex flex-row space-x-2 flex-wrap">
-                {tags.slice(0, 3).map(tag => <a class="
+                {tags.slice(0, 3).map(tag => <a 
+                href={`/tags/${tag.toLowerCase()}`}
+                class="
                     badge badge-flat-primary
                 ">{tag}</a>)}
             </nav>}
